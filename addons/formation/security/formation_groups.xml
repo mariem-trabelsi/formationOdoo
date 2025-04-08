@@ -1,0 +1,22 @@
+<odoo>
+  <data>
+       
+        <record id="group_formation_admin" model="res.groups">
+            <field name="name">Administrateur Formation</field>
+            <field name="category_id" ref="base.module_category_human_resources"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_system'))]"/>
+        </record>
+
+        
+        <record id="group_formation_formateur" model="res.groups">
+            <field name="name">Formateur Formation</field>
+            <field name="category_id" ref="base.module_category_human_resources"/>
+        </record>
+
+        
+        <record id="group_formation_participant" model="res.groups">
+            <field name="name">Participant Formation</field>
+            <field name="category_id" ref="base.module_category_human_resources"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,20 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_formation_admin,Access Formation Admin,model_formation_formation,group_formation_admin,1,1,1,1
+access_formation_formateur,Access Formation Formateur,model_formation_formation,group_formation_formateur,1,1,0,0
+access_formation_participant,Access Formation Participant,model_formation_formation,group_formation_participant,1,0,1,0
+
+access_formateur_admin,Access Formateur Admin,model_formation_formateur,group_formation_admin,1,1,1,1
+access_formateur_formateur,Access Formateur Formateur,model_formation_formateur,group_formation_formateur,0,1,1,0
+access_formateur_participant,Access Formateur Participant,model_formation_formateur,group_formation_participant,0,0,0,0
+
+access_participant_admin,Access Participant Admin,model_formation_participant,group_formation_admin,1,1,1,1
+access_participant_formateur,Access Participant Formateur,model_formation_participant,group_formation_formateur,1,1,0,0
+access_participant_participant,Access Participant Participant,model_formation_participant,group_formation_participant,1,0,1,0
+
+access_categorie_admin,Access Categorie Admin,model_formation_categorie,group_formation_admin,1,1,1,1
+access_categorie_formateur,Access Categorie Formateur,model_formation_categorie,group_formation_formateur,1,1,0,0
+access_categorie_participant,Access Categorie Participant,model_formation_categorie,group_formation_participant,1,0,0,0
+
+access_session_admin,Access Session Admin,model_formation_session,group_formation_admin,1,1,1,1
+access_session_formateur,Access Session Formateur,model_formation_session,group_formation_formateur,1,1,1,0
+access_session_participant,Access Session Participant,model_formation_session,group_formation_participant,1,0,1,0

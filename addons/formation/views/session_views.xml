@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Action pour afficher la liste des sessions -->
+    <record id="action_session_list" model="ir.actions.act_window">
+        <field name="name">Sessions</field>
+        <field name="res_model">formation.session</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menu principal "Formations" (si non existant) -->
+    <menuitem id="menu_formation_root" name="Formations" sequence="10"/>
+
+    <!-- Menu "Gestion des Formations" -->
+    <menuitem id="menu_formation" name="Gestion des Formations" parent="menu_formation_root" sequence="20"/>
+    
+    <!-- Menu "Sessions" au même niveau que "Gestion des Formations" -->
+    <menuitem id="menu_session" name="Sessions" parent="menu_formation_root" sequence="25"/>
+
+    <!-- Sous-menu affichant la liste des sessions -->
+    <menuitem id="menu_session_list" name="Liste des Sessions" parent="menu_session" action="action_session_list" sequence="30"/>
+
+    <!-- Vue liste des sessions -->
+    <record id="view_session_list" model="ir.ui.view">
+        <field name="name">formation.session.list</field>
+        <field name="model">formation.session</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="formation_id"/>
+                <field name="date_debut"/>
+                <field name="date_fin"/>
+                <field name="duree"/>
+                <field name="formateur_id"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vue formulaire des sessions -->
+    <record id="view_session_form" model="ir.ui.view">
+        <field name="name">formation.session.form</field>
+        <field name="model">formation.session</field>
+        <field name="arch" type="xml">
+            <form string="Session de formation">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="formation_id"/>
+                        <field name="formateur_id"/>
+                    </group>
+                    <group>
+                        <field name="date_debut"/>
+                        <field name="date_fin"/>
+                        <field name="duree"/>
+                    </group>
+                    <group>
+                        <field name="state"/>
+                    </group>
+                    <notebook>
+                        <page string="Participants">
+                            <field name="participant_ids" widget="many2many_tags"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

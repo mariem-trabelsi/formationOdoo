@@ -1,0 +1,16 @@
+<odoo>
+    <!-- Menu parent "Gestion des Formations" -->
+    <menuitem id="menu_formation_root" name="Gestion des Formations" sequence="10"/>
+
+    <!-- Menu parent "Gestion des Membres" -->
+    <menuitem id="menu_membres_root" name="Gestion des Membres" sequence="20"/>
+
+    <!-- Sous-menu "Formateurs" sous "Gestion des Membres" -->
+    <menuitem id="menu_formateur" name="Formateurs" parent="menu_membres_root" action="action_formateur_list" sequence="30"/>
+
+    <!-- Sous-menu "Participants" sous "Gestion des Membres" -->
+    <menuitem id="menu_participant" name="Participants" parent="menu_membres_root" action="action_participant_list" sequence="40"/>
+
+    <!-- Sous-menu "Formations" sous "Gestion des Formations" -->
+    <menuitem id="menu_formation" name="Gestion des Formations" parent="menu_formation_root" action="action_formation_list" sequence="20"/>
+</odoo>

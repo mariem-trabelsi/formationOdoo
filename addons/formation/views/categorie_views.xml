@@ -1,0 +1,45 @@
+<odoo>
+    <!-- Action pour afficher la liste des catégories -->
+    <record id="action_categorie_list" model="ir.actions.act_window">
+        <field name="name">Catégories</field>
+        <field name="res_model">formation.categorie</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menu "Gestion des Formations" -->
+    <menuitem id="menu_formation_root" name="Gestion des Formations" sequence="10"/>
+
+    <!-- Sous-menu "Catégories" au même niveau que "Participants" -->
+    <menuitem id="menu_categorie" name="Catégories" parent="menu_formation_root" action="action_categorie_list" sequence="30"/>
+
+    <!-- Sous-menu affichant la liste des catégories -->
+    <menuitem id="menu_categorie_list" name="Liste des Catégories" parent="menu_categorie" action="action_categorie_list" sequence="35"/>
+
+    <!-- Vue liste des catégories -->
+    <record id="view_categorie_list" model="ir.ui.view">
+        <field name="name">formation.categorie.list</field>
+        <field name="model">formation.categorie</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="description"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vue formulaire des catégories -->
+    <record id="view_categorie_form" model="ir.ui.view">
+        <field name="name">formation.categorie.form</field>
+        <field name="model">formation.categorie</field>
+        <field name="arch" type="xml">
+            <form string="Catégorie">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
